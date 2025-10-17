@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew & Bean — Events</title>
+  <meta name="description" content="Community events, classes, and tastings at Brew & Bean." />
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#2B4D66',accent:'#D9643E'}}}}</script>
+  <style>:root{--font-primary:"";--font-secondary:""}body{font-family:var(--font-secondary);background:#F7F5F2}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between"><a href="/index.html" class="flex items-center gap-3"><img src="https://images.pexels.com/photos/16213401/pexels-photo-16213401.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="logo" class="w-9 h-9 rounded-lg"/></a></div>
+  </header>
+
+  <main class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <section class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl font-bold">Events & Classes</h1>
+          <a href="#calendar" class="px-6 py-2 rounded-full bg-accent text-white">View calendar</a>
+        </div>
+        <p class="mt-4 text-gray-700">Tastings, brewing classes, and community gatherings — join us in-store or online.</p>
+      </section>
+
+      <section id="calendar" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="bg-white rounded-xl shadow-lg p-4 flex gap-4">
+          <div class="bg-accent text-white rounded-lg w-16 h-16 flex items-center justify-center font-bold">12<br/><span class="text-xs">Oct</span></div>
+          <div>
+            <h3 class="font-semibold">Pour Over Workshop</h3>
+            <p class="text-sm text-gray-600">Downtown • 6:00pm • $30</p>
+            <div class="mt-3"><a href="#" class="px-4 py-2 rounded-full bg-primary text-white">Buy ticket</a></div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl shadow-lg p-4 flex gap-4">
+          <div class="bg-accent text-white rounded-lg w-16 h-16 flex items-center justify-center font-bold">20<br/><span class="text-xs">Oct</span></div>
+          <div>
+            <h3 class="font-semibold">Cold Brew Tasting</h3>
+            <p class="text-sm text-gray-600">Maple St • 11:00am • Free</p>
+            <div class="mt-3"><a href="#" class="px-4 py-2 rounded-full bg-primary text-white">RSVP</a></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-8 bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-xl font-semibold">Host an event</h2>
+        <p class="text-sm text-gray-600 mt-2">Spaces available for private tastings and corporate events. <a href="/contact.html" class="text-primary">Contact us</a> for pricing.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-100 py-8"><div class="max-w-6xl mx-auto px-6 text-sm text-gray-600">Event policies • Accessibility</div></footer>
+</body>
+</html>
