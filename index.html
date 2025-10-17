@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew & Bean Coffee — Home</title>
+  <meta name="description" content="Brew & Bean Coffee — Fresh roasted beans, subscriptions, and neighborhood cafes." />
+  <!-- Fonts (placeholder token required) -->
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind theme extensions for colors and fonts (kept small and inline)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2B4D66',
+            secondary: '#6B3F2D',
+            accent: '#D9643E',
+            bg: '#F7F5F2'
+          },
+          boxShadow: {
+            'md-custom': '0 6px 18px rgba(43,77,102,0.08)',
+            'focus-ring': '0 0 0 4px rgba(41,110,146,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Minimal custom styles for font-family placeholders and focus outline */
+    :root{
+      --font-primary: "", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --font-secondary: "", system-ui, -apple-system, 'Segoe UI', Roboto;
+    }
+    html,body{font-family:var(--font-secondary);background-color:#F7F5F2;color:#222222}
+    h1,h2,h3{font-family:var(--font-primary)}
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important}
+    }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <!-- Global Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100" id="site-header">
+    <div class="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 h-16 md:h-20 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="/index.html" class="flex items-center gap-3" aria-label="Brew & Bean Coffee home">
+          <img src="https://images.pexels.com/photos/302902/pexels-photo-302902.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Brew & Bean Coffee logo" class="w-10 h-10 rounded-2xl shadow-md object-cover"/>
+          <span class="hidden md:inline-block text-primary font-semibold text-lg">Brew & Bean</span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6" aria-label="Primary Navigation">
+        <a href="/shop.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-all">Shop</a>
+        <a href="/subscriptions.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-all">Subscriptions</a>
+        <a href="/locations.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-all">Locations</a>
+        <a href="/story.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-all">Story</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="search-toggle" class="p-2 rounded-full hover:bg-gray-50 transition-all focus:outline-none focus:ring-4 focus:ring-focus-ring" aria-label="Open search">
+          <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z"></path></svg>
+        </button>
+        <a href="/cart.html" class="relative p-2 rounded-full hover:bg-gray-50 transition-all focus:outline-none focus:ring-4 focus:ring-focus-ring" aria-label="View cart">
+          <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10m-6 4a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+          <span class="absolute -top-1 -right-1 bg-accent text-white text-xs rounded-full px-1.5">2</span>
+        </a>
+        <a href="#account" class="hidden md:inline-flex items-center text-sm px-3 py-1.5 rounded-full border border-gray-100 hover:shadow-md transition-shadow">Account</a>
+
+        <button id="mobile-menu-button" class="md:hidden p-2 ml-2 rounded-md focus:outline-none focus:ring-4 focus:ring-focus-ring" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile bottom sticky CTA -->
+    <div class="fixed inset-x-0 bottom-0 md:hidden z-40">
+      <div class="max-w-6xl mx-auto px-6 py-3">
+        <div class="bg-primary text-white rounded-full flex items-center justify-between px-4 py-3 shadow-lg">
+          <div class="text-sm font-semibold">Order fresh beans — quick delivery</div>
+          <a href="/shop.html" class="ml-4 px-6 py-2 bg-accent rounded-full text-sm font-semibold hover:scale-105 transition-transform">Order</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mt-6">
+    <!-- HERO -->
+    <section class="relative w-full overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(43,77,102,0.22)] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto">
+        <div class="relative h-72 md:h-[520px] lg:h-[620px]">
+          <!-- Use video when supported; fallback to image poster -->
+          <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-none">
+            <source src="https://images.unsplash.com/photo-1582148440927-87ad98cfcc05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw1fHxtdXRlZCUyMGxvb3BpbmclMjB2aWRlbyUyMG9mJTIwZXNwcmVzc28lMjBleHRyYWN0aW9uJTIwYW5kJTIwYmFyaXN0YSUyMHBvdXJpbmd8ZW58MHwwfHx8MTc2MDY4NjgzN3ww&ixlib=rb-4.1.0&q=80&w=1080" type="video/mp4">
+            <!-- poster fallback -->
+            <img src="https://images.pexels.com/photos/7658171/pexels-photo-7658171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Barista pulling an espresso at Brew & Bean" class="w-full h-full object-cover" />
+          </video>
+          <div class="absolute inset-0 flex items-center">
+            <div class="max-w-6xl mx-auto px-6 md:px-12">
+              <div class="text-white max-w-xl py-6 md:py-12 animate-fade-up">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">Freshly roasted. Delivered or brewed nearby.</h1>
+                <p class="mt-4 text-lg md:text-xl opacity-90">Single-origin beans, small-batch roasts, and flexible subscriptions — enjoy coffee at peak freshness.</p>
+                <div class="mt-6 flex gap-3">
+                  <a href="/shop.html" class="px-8 py-3 rounded-full font-semibold bg-accent text-white shadow-md hover:scale-105 transition-transform">Order Online</a>
+                  <a href="/locations.html" class="px-8 py-3 rounded-full font-semibold bg-white text-primary shadow-sm hover:scale-105 transition-transform">Find a Store</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl md:text-4xl font-semibold">Featured</h2>
+          <a href="/shop.html" class="text-sm text-primary hover:underline">See all</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://images.unsplash.com/photo-1758565204549-fab9d3ff4120?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxGZWF0dXJlZCUyMEJlYW5zJTIwLSUyMGJhZyUyMG9mJTIwYmVhbnMlMjBvbiUyMHdvb2RlbiUyMHRhYmxlfGVufDB8MHx8fDE3NjA2ODY4Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Featured beans" class="rounded-xl object-cover w-full h-64" />
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold">Colombia — La Esperanza</h3>
+              <p class="text-sm text-gray-500 mt-1">Washed, Caturra • Roast date: 4 days ago</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-lg font-semibold">From $16</div>
+                <div class="flex gap-2">
+                  <button class="px-6 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Quick Add</button>
+                  <a href="/product.html" class="px-4 py-2 rounded-full border border-gray-100 text-sm hover:shadow-md">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Subscriptions Preview -->
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://pixabay.com/get/gb60f17daef99b1169dedbcb3001ad361d33ba40c0117254ecb9cf757af1bbb79b0f2977323337ebb4f3c47702dae87f7a87e789508d9bd767a7120ebe306cad6_640.jpg" alt="Subscriptions preview" class="rounded-xl object-cover w-full h-64" />
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold">Coffee Subscription</h3>
+              <p class="text-sm text-gray-500 mt-1">Flexible frequency & grind choices. Pause anytime.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-sm text-gray-700">Starting at</div>
+                <div class="flex gap-2">
+                  <a href="/subscriptions.html" class="px-6 py-2 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Create plan</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Seasonal Picks -->
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://images.unsplash.com/photo-1601938297899-cf7948e1f765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw3fHxTZWFzb25hbCUyMHJvYXN0JTIwLSUyMGF1dHVtbiUyMHRoZW1lZCUyMGNvZmZlZSUyMHNjZW5lfGVufDB8MHx8fDE3NjA2ODY4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Seasonal picks" class="rounded-xl object-cover w-full h-64" />
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold">Autumn Blend — Limited</h3>
+              <p class="text-sm text-gray-500 mt-1">Warm spice notes, balanced body.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-lg font-semibold">$18</div>
+                <div class="flex gap-2">
+                  <button class="px-6 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Quick Add</button>
+                  <a href="/product.html" class="px-4 py-2 rounded-full border border-gray-100 text-sm hover:shadow-md">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Brew & Bean -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-white to-[rgba(217,100,62,0.03)]">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl md:text-4xl font-semibold">Why Brew & Bean</h2>
+          <p class="mt-3 text-base text-gray-700">We roast small batches, source transparently, and commit to sustainable practices — all to bring you coffee at its best.</p>
+
+          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <li class="flex gap-3 items-start bg-white p-4 rounded-xl shadow-lg">
+              <img src="https://images.unsplash.com/photo-1753784997487-e6404b7525ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxSb2FzdGVyeSUyMGlsbHVzdHJhdGlvbnxlbnwwfDB8fHwxNzYwNjg2ODQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Roastery icon" class="w-12 h-12 object-cover rounded-lg" />
+              <div>
+                <h3 class="text-sm font-semibold">Micro-Roastery</h3>
+                <p class="text-sm text-gray-500">Small-batch roasting for consistent freshness.</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start bg-white p-4 rounded-xl shadow-lg">
+              <img src="https://images.pexels.com/photos/9667181/pexels-photo-9667181.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Sourcing icon" class="w-12 h-12 object-cover rounded-lg" />
+              <div>
+                <h3 class="text-sm font-semibold">Direct Sourcing</h3>
+                <p class="text-sm text-gray-500">Long-term farmer partnerships and traceability.</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start bg-white p-4 rounded-xl shadow-lg">
+              <img src="https://pixabay.com/get/g48fd863404f6e3967b9ecbf544f02e072bd971128d99c79c23b2b23faca3ec35c0e5aa38c25b0dd90be40d4a767fe5a17413e3e20682755031761bde27007c0a_640.jpg" alt="Sustainability icon" class="w-12 h-12 object-cover rounded-lg" />
+              <div>
+                <h3 class="text-sm font-semibold">Sustainable Impact</h3>
+                <p class="text-sm text-gray-500">Certifications & community programs that matter.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-6">
+            <a href="/story.html" class="px-8 py-3 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Read Our Origins</a>
+          </div>
+        </div>
+
+        <aside class="bg-white rounded-xl shadow-lg p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-sm text-gray-500">Certified</div>
+              <div class="text-lg font-semibold mt-1">Fair Trade & Organic</div>
+            </div>
+            <img src="https://images.pexels.com/photos/12700036/pexels-photo-12700036.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Certification badges" class="w-20 h-20 object-contain" />
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Subscriptions Preview -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl md:text-4xl font-semibold">Subscriptions</h2>
+          <a href="/subscriptions.html" class="text-sm text-primary hover:underline">Manage plans</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <h3 class="text-lg font-semibold">Daily Brew</h3>
+            <p class="text-sm text-gray-500 mt-1">250g every 2 weeks — always fresh</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-lg font-semibold">$14 / shipment</div>
+              <a href="/subscriptions.html" class="px-6 py-2 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Choose</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <h3 class="text-lg font-semibold">Home Barista</h3>
+            <p class="text-sm text-gray-500 mt-1">500g monthly with grinder tips</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-lg font-semibold">$25 / shipment</div>
+              <a href="/subscriptions.html" class="px-6 py-2 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Choose</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <h3 class="text-lg font-semibold">Gift Subscription</h3>
+            <p class="text-sm text-gray-500 mt-1">Prepay 3/6 months gift plan</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-lg font-semibold">From $40</div>
+              <a href="/subscriptions.html" class="px-6 py-2 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Give</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Highlight -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <img src="https://images.unsplash.com/photo-1602102678810-969e543e708c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw0fHxCcmV3JTIwZ3VpZGUlMjBoZXJvJTIwLSUyMHBvdXIlMjBvdmVyJTIwc2V0dXB8ZW58MHwwfHx8MTc2MDY4Njg0NHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Pour over setup with coffee and kettle" class="rounded-xl object-cover w-full h-64" />
+        <div>
+          <h2 class="text-2xl md:text-4xl font-semibold">Brew Guide: The Perfect Pour Over</h2>
+          <p class="mt-4 text-gray-700">Step-by-step guide to dial in your pour over with recommended dose, grind and water temperature. Learn how to taste and adjust.</p>
+          <div class="mt-6">
+            <a href="/brew-guides.html" class="px-8 py-3 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Read Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Locator Preview -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl md:text-4xl font-semibold">Find a Store Near You</h2>
+          <p class="mt-2 text-gray-600">Allow location access or enter your city to find the nearest Brew & Bean cafe.</p>
+
+          <div class="mt-4 flex gap-3">
+            <button id="detect-location" class="px-6 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Use my location</button>
+            <a href="/locations.html" class="px-6 py-2 rounded-full font-semibold bg-white border border-gray-100 hover:shadow-md">Search city / ZIP</a>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl shadow-lg p-4 flex items-start gap-4">
+              <img src="https://images.pexels.com/photos/1850625/pexels-photo-1850625.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Downtown cafe" class="w-24 h-24 object-cover rounded-lg" />
+              <div>
+                <h3 class="text-sm font-semibold">Brew & Bean — Downtown</h3>
+                <p class="text-xs text-gray-500">Open: 7am — 7pm</p>
+                <div class="mt-3 flex gap-2">
+                  <a href="#" class="text-sm px-3 py-2 rounded-full bg-primary text-white">Directions</a>
+                  <a href="tel:+1234567890" class="text-sm px-3 py-2 rounded-full border">Call</a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-4 flex items-start gap-4">
+              <img src="https://images.unsplash.com/photo-1619267110184-798fa0240faf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxTdG9yZSUyMHRodW1ibmFpbCUyMC0lMjBuZWlnaGJvcmhvb2QlMjBjYWZlfGVufDB8MHx8fDE3NjA2ODY4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Neighborhood cafe" class="w-24 h-24 object-cover rounded-lg" />
+              <div>
+                <h3 class="text-sm font-semibold">Brew & Bean — Maple St</h3>
+                <p class="text-xs text-gray-500">Open: 6:30am — 6pm</p>
+                <div class="mt-3 flex gap-2">
+                  <a href="#" class="text-sm px-3 py-2 rounded-full bg-primary text-white">Directions</a>
+                  <a href="tel:+1234567890" class="text-sm px-3 py-2 rounded-full border">Call</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-lg font-semibold">Nearest Cafes</h3>
+          <p class="text-sm text-gray-500 mt-2">Auto-detect city or search manually to expand the map.</p>
+          <div class="mt-4">
+            <a href="/locations.html" class="px-6 py-2 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Open Map</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Testimonials / Social Feed -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-white to-[rgba(43,77,102,0.02)]">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl md:text-4xl font-semibold">From our community</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <blockquote class="bg-white rounded-xl shadow-lg p-6">
+            <p class="text-gray-700">"The freshest beans I've had all year. The subscription is flexible and the roast is perfect."</p>
+            <footer class="mt-4 text-sm text-gray-500">— Jamie, NYC</footer>
+          </blockquote>
+
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <img src="https://images.unsplash.com/photo-1557130696-82c95909fe08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw2fHxpbnN0YWdyYW0lMjBzdHlsZSUyMC0lMjBsYXR0ZSUyMGFydHxlbnwwfDB8fHwxNzYwNjg2ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Latte art post" class="rounded-xl object-cover w-full h-40" />
+            <p class="mt-3 text-sm text-gray-600">@coffee.adventures — Perfect cup thanks to @brewandbean</p>
+          </div>
+
+          <blockquote class="bg-white rounded-xl shadow-lg p-6">
+            <p class="text-gray-700">"Customer service is fantastic and the roast dates are always clear. Highly recommend."</p>
+            <footer class="mt-4 text-sm text-gray-500">— Alex, SF</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-6 bg-primary rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-semibold">Join our newsletter</h3>
+          <p class="mt-2 text-sm opacity-90">Get 15% off your first order. Fresh roast drops and brewing tips.</p>
+        </div>
+        <form id="newsletter" class="w-full md:w-auto flex gap-3" onsubmit="event.preventDefault(); handleNewsletter();">
+          <label for="email" class="sr-only">Email</label>
+          <input id="email" type="email" required placeholder="you@example.com" class="px-4 py-3 rounded-full text-gray-800 focus:outline-none" />
+          <button type="submit" class="px-6 py-3 rounded-full font-semibold bg-accent text-white hover:scale-105 transition-transform">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1749488588138-abb9bbec6191?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxCcmV3JTIwJTI2JTIwQmVhbiUyMGxvZ28lMjBzbWFsbHxlbnwwfDB8fHwxNzYwNjg2ODQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Brew & Bean logo" class="w-10 h-10 rounded-lg" />
+            <span class="font-semibold">Brew & Bean</span>
+          </a>
+          <p class="mt-3 text-sm text-gray-500">Fresh roasts & friendly cafés. Delivered or brewed nearby.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Shop</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-600">
+            <li><a href="/shop.html" class="hover:text-primary">All Beans</a></li>
+            <li><a href="/shop.html" class="hover:text-primary">Subscriptions</a></li>
+            <li><a href="/shop.html" class="hover:text-primary">Gear & Gifts</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Company</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-600">
+            <li><a href="/story.html" class="hover:text-primary">Our Story</a></li>
+            <li><a href="/locations.html" class="hover:text-primary">Locations</a></li>
+            <li><a href="/contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Support</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-600">
+            <li><a href="/cart.html" class="hover:text-primary">Shipping & Returns</a></li>
+            <li><a href="/contact.html" class="hover:text-primary">Help Center</a></li>
+            <li><a href="/privacy.html" class="hover:text-primary">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+          <div>© <span id="year"></span> Brew & Bean Coffee. All rights reserved.</div>
+          <div class="mt-3 md:mt-0 flex items-center gap-4">
+            <a href="#" class="hover:text-primary">Instagram</a>
+            <a href="#" class="hover:text-primary">Facebook</a>
+            <a href="#" class="hover:text-primary">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Basic interactive behaviors: mobile menu, header compression, newsletter handler
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    mobileBtn.addEventListener('click', () => {
+      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      // Simple bottom-sheet nav
+      if(!expanded){
+        const sheet = document.createElement('div');
+        sheet.id = 'mobile-menu';
+        sheet.className = 'fixed inset-0 z-50 bg-white p-6 overflow-auto';
+        sheet.innerHTML = `
+          <div class=\"flex items-center justify-between\"> 
+            <div class=\"flex items-center gap-3\"> 
+              <img src=\"https://images.unsplash.com/photo-1592773674797-db7b452c3aab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw0fHxCcmV3JTIwJTI2JTIwQmVhbiUyMGxvZ28lMjBzbWFsbHxlbnwwfDB8fHwxNzYwNjg2ODQ4fDA&ixlib=rb-4.1.0&q=80&w=1080\" alt=\"logo\" class=\"w-10 h-10 rounded-lg\"> 
+              <span class=\"font-semibold\">Brew & Bean</span>
+            </div>
+            <button id=\"mobile-close\" class=\"p-2 rounded-md\">Close</button>
+          </div>
+          <nav class=\"mt-8 flex flex-col gap-4\">
+            <a href=\"/shop.html\" class=\"text-lg font-medium\">Shop</a>
+            <a href=\"/subscriptions.html\" class=\"text-lg font-medium\">Subscriptions</a>
+            <a href=\"/locations.html\" class=\"text-lg font-medium\">Locations</a>
+            <a href=\"/story.html\" class=\"text-lg font-medium\">Story</a>
+            <a href=\"/contact.html\" class=\"text-lg font-medium\">Contact</a>
+          </nav>
+        `;
+        document.body.appendChild(sheet);
+        document.getElementById('mobile-close').addEventListener('click', ()=>{ sheet.remove(); mobileBtn.setAttribute('aria-expanded','false'); });
+      } else {
+        const sheet = document.getElementById('mobile-menu');
+        if(sheet) sheet.remove();
+      }
+    });
+
+    // Header compress on scroll
+    const header = document.getElementById('site-header');
+    let lastScroll = 0;
+    window.addEventListener('scroll', ()=>{
+      const sc = window.scrollY;
+      if(sc > 48){ header.classList.add('h-16'); }
+      else { header.classList.remove('h-16'); }
+      lastScroll = sc;
+    });
+
+    function handleNewsletter(){
+      const email = document.getElementById('email');
+      if(!email.checkValidity()){
+        email.focus();
+        return;
+      }
+      // Simulate success
+      const btn = document.querySelector('#newsletter button');
+      btn.disabled = true; btn.textContent = 'Subscribed';
+      setTimeout(()=>{ btn.disabled = false; btn.textContent = 'Subscribe'; email.value = ''; alert('Thanks — check your inbox for a 15% off code!'); }, 1200);
+    }
+  </script>
+</body>
+</html>
