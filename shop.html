@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew & Bean Coffee — Shop</title>
+  <meta name="description" content="Shop whole beans, subscriptions, and gear from Brew & Bean." />
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#2B4D66', accent: '#D9643E' } } } }
+  </script>
+  <style>
+    :root{ --font-primary: "", system-ui; --font-secondary: "", system-ui }
+    body{font-family:var(--font-secondary);background-color:#F7F5F2;color:#222}
+    h1,h2{font-family:var(--font-primary)}
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3"><img src="https://images.pexels.com/photos/17660748/pexels-photo-17660748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="logo" class="w-9 h-9 rounded-lg"/><span class="hidden md:inline text-primary font-semibold">Brew & Bean</span></a>
+      <nav class="hidden md:flex gap-6"><a href="/shop.html" class="text-sm font-medium text-primary">Shop</a><a href="/subscriptions.html" class="text-sm">Subscriptions</a><a href="/locations.html" class="text-sm">Locations</a></nav>
+      <div class="flex items-center gap-3"><a href="/cart.html" class="p-2 rounded-md">Cart</a><button id="filters-toggle" class="p-2 md:hidden">Filters</button></div>
+    </div>
+  </header>
+
+  <main class="py-8 md:py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Promo Strip -->
+      <div class="w-full bg-primary text-white rounded-xl p-4 flex items-center justify-between">
+        <div>
+          <strong class="block">Seasonal Roast Drop</strong>
+          <small class="opacity-90">Limited release — medium roast with candied citrus notes</small>
+        </div>
+        <a href="/shop.html?filter=seasonal" class="px-6 py-2 rounded-full bg-accent font-semibold hover:scale-105 transition-transform">Shop Seasonal</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Filters column (desktop) -->
+        <aside class="hidden md:block md:col-span-1">
+          <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+            <h3 class="font-semibold">Filters</h3>
+            <div class="mt-4 space-y-4">
+              <div>
+                <label class="text-sm font-medium">Roast</label>
+                <select class="mt-2 w-full p-2 border rounded-md">
+                  <option>All</option>
+                  <option>Light</option>
+                  <option>Medium</option>
+                  <option>Dark</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm font-medium">Origin</label>
+                <select class="mt-2 w-full p-2 border rounded-md"><option>All</option></select>
+              </div>
+              <div>
+                <label class="text-sm font-medium">Subscription</label>
+                <div class="mt-2"><label class="inline-flex items-center"><input type="checkbox" class="mr-2" />Subscription eligible</label></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="md:col-span-3">
+          <div class="flex items-center justify-between">
+            <h1 class="text-2xl md:text-3xl font-semibold">Beans & Gear</h1>
+            <div class="flex items-center gap-3">
+              <label class="text-sm">Sort:</label>
+              <select class="p-2 border rounded-md"><option>Featured</option><option>Price</option></select>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Product Card -->
+            <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+              <button class="block text-left w-full" onclick="location.href='product.html'">
+                <img src="https://images.unsplash.com/photo-1732875653762-4175ae6b732c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw4fHxFdGhpb3BpYSUyMC0lMjBmbG9yYWwlMjBzaW5nbGUlMjBvcmlnaW4lMjBiYWd8ZW58MHwwfHx8MTc2MDY4Njg1MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Ethiopia Floral" class="rounded-xl object-cover w-full h-64 hover:scale-105 transition-transform" />
+                <h3 class="mt-4 text-lg font-semibold">Ethiopia Yirgacheffe</h3>
+                <p class="text-sm text-gray-500">Washed • Floral citrus • Roast 3 days ago</p>
+              </button>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-lg font-semibold">$18</div>
+                <div class="flex items-center gap-2">
+                  <select class="p-2 border rounded-md text-sm"><option>Whole Bean</option><option>Medium Grind</option></select>
+                  <button class="px-4 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Repeat product card (2) -->
+            <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+              <img src="https://images.unsplash.com/photo-1649278942739-c172050735d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMC0lMjBudXR0eSUyMGJhZ3xlbnwwfDB8fHwxNzYwNjg2ODUxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Colombia La Esperanza" class="rounded-xl object-cover w-full h-64" />
+              <h3 class="mt-4 text-lg font-semibold">Colombia — La Esperanza</h3>
+              <p class="text-sm text-gray-500">Balanced • Chocolate • Roast 6 days ago</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-lg font-semibold">$16</div>
+                <div class="flex items-center gap-2"><select class="p-2 border rounded-md text-sm"><option>Whole Bean</option></select><button class="px-4 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Add</button></div>
+              </div>
+            </article>
+
+            <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+              <img src="https://images.unsplash.com/photo-1636115069245-5cdc5dfa8b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw1fHxTZWFzb25hbCUyMEJsZW5kJTIwLSUyMGF1dHVtbiUyMGJhZyUyMG9uJTIwcnVzdGljJTIwdGFibGV8ZW58MHwwfHx8MTc2MDY4Njg1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Seasonal Blend" class="rounded-xl object-cover w-full h-64" />
+              <h3 class="mt-4 text-lg font-semibold">Autumn Blend</h3>
+              <p class="text-sm text-gray-500">Spice notes • Limited</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-lg font-semibold">$18</div>
+                <div class="flex items-center gap-2"><select class="p-2 border rounded-md text-sm"><option>Whole Bean</option></select><button class="px-4 py-2 rounded-full font-semibold bg-primary text-white hover:scale-105 transition-transform">Add</button></div>
+              </div>
+            </article>
+
+            <!-- More product cards could be lazy-loaded via API -->
+          </div>
+
+          <div class="mt-8 flex justify-center">
+            <button class="px-8 py-3 rounded-full font-semibold bg-white border border-gray-200 hover:shadow-md transition-shadow">Load more</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-100 py-8">
+    <div class="max-w-6xl mx-auto px-6 text-sm text-gray-600">Policies • Shipping • Returns</div>
+  </footer>
+
+  <script>
+    // Filters toggle for mobile (opens a simple sheet)
+    document.getElementById('filters-toggle').addEventListener('click', ()=>{
+      const sheet = document.createElement('div');
+      sheet.className = 'fixed inset-0 z-50 bg-white p-6 overflow-auto';
+      sheet.innerHTML = `
+        <div class=\"flex items-center justify-between\"><h3 class=\"font-semibold\">Filters</h3><button id=\"closeFilters\">Close</button></div>
+        <div class=\"mt-6\">[Filter controls]</div>
+      `;
+      document.body.appendChild(sheet);
+      document.getElementById('closeFilters').addEventListener('click', ()=> sheet.remove());
+    });
+  </script>
+</body>
+</html>
