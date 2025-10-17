@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew & Bean — Checkout</title>
+  <meta name="description" content="Checkout — shipping, payment, and order review." />
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#2B4D66',accent:'#D9643E'}}}}</script>
+  <style>:root{--font-primary:"";--font-secondary:""}body{font-family:var(--font-secondary);background:#F7F5F2}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <header class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center"><a href="/index.html" class="flex items-center gap-3"><img src="https://images.pexels.com/photos/302902/pexels-photo-302902.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="logo" class="w-9 h-9 rounded-lg"/></a></div>
+  </header>
+
+  <main class="py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-lg font-semibold">Shipping</h2>
+        <form class="mt-4 space-y-4" onsubmit="event.preventDefault(); alert('Proceeding to payment (demo)');">
+          <div><label class="text-sm">Full name</label><input class="w-full p-2 border rounded-md" required /></div>
+          <div><label class="text-sm">Address</label><input class="w-full p-2 border rounded-md" required /></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3"><input placeholder="City" class="p-2 border rounded-md" required /><input placeholder="ZIP" class="p-2 border rounded-md" required /></div>
+          <div><button class="px-6 py-3 rounded-full bg-primary text-white">Continue to payment</button></div>
+        </form>
+      </section>
+
+      <aside class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="font-semibold">Order summary</h3>
+        <div class="mt-4 text-sm space-y-2"><div class="flex justify-between"><span>2 items</span><span>$50</span></div><div class="flex justify-between"><span>Shipping</span><span>$5</span></div><div class="border-t pt-3 flex justify-between font-semibold"><span>Total</span><span>$55</span></div></div>
+        <div class="mt-6 text-xs text-gray-500">Click "Continue" to enter payment details. You will receive order confirmation by email.</div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-100 py-8"><div class="max-w-6xl mx-auto px-6 text-sm text-gray-600">Support • secure payments</div></footer>
+</body>
+</html>
