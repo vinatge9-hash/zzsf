@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Brew & Bean</title>
+  <meta name="description" content="Contact Brew & Bean for support, wholesale, or press inquiries." />
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#2B4D66',accent:'#D9643E'}}}}</script>
+  <style>:root{--font-primary:"";--font-secondary:""}body{font-family:var(--font-secondary);background:#F7F5F2}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between"><a href="/index.html" class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1640780116262-412da1b923f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxCcmV3JTIwJTI2JTIwQmVhbiUyMGxvZ28lMjBzbWFsbHxlbnwwfDB8fHwxNzYwNjg2ODQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="logo" class="w-9 h-9 rounded-lg"/></a></div>
+  </header>
+
+  <main class="py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <section class="lg:col-span-7 bg-white rounded-xl shadow-lg p-6">
+        <h1 class="text-2xl font-semibold">Contact us</h1>
+        <p class="text-sm text-gray-600 mt-2">We're here to help — choose a category and send us a message.</p>
+
+        <form class="mt-6 space-y-4" onsubmit="event.preventDefault(); alert('Thanks — we will respond shortly.');">
+          <div>
+            <label class="text-sm">Category</label>
+            <select class="w-full p-2 border rounded-md">
+              <option>Support</option>
+              <option>Wholesale</option>
+              <option>Press</option>
+            </select>
+          </div>
+          <div><label class="text-sm">Name</label><input class="w-full p-2 border rounded-md" required /></div>
+          <div><label class="text-sm">Email</label><input type="email" class="w-full p-2 border rounded-md" required /></div>
+          <div><label class="text-sm">Message</label><textarea class="w-full p-2 border rounded-md h-32" required></textarea></div>
+          <div><button class="px-6 py-3 rounded-full bg-accent text-white">Send message</button></div>
+        </form>
+      </section>
+
+      <aside class="lg:col-span-5 bg-white rounded-xl shadow-lg p-6">
+        <h3 class="font-semibold">Support options</h3>
+        <div class="mt-3 space-y-3 text-sm text-gray-600">
+          <div><strong>Phone</strong><div class="mt-1">Mon–Fri 8am–6pm <a href="tel:+1234567890" class="text-primary">+1 (234) 567-890</a></div></div>
+          <div><strong>Email</strong><div class="mt-1"><a href="mailto:help@brewandbean.co" class="text-primary">help@brewandbean.co</a></div></div>
+          <div><strong>Press & Wholesale</strong><div class="mt-1"><a href="mailto:partners@brewandbean.co" class="text-primary">partners@brewandbean.co</a></div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-100 py-8"><div class="max-w-6xl mx-auto px-6 text-sm text-gray-600">Careers • Privacy • Newsletter</div></footer>
+</body>
+</html>
