@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew & Bean Coffee — Locations</title>
+  <meta name="description" content="Find a Brew & Bean cafe near you — map, hours, and services." />
+  <!--  -->
+  <!--  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#2B4D66',accent:'#D9643E'}}}}</script>
+  <style>:root{--font-primary:"";--font-secondary:""}body{font-family:var(--font-secondary);background:#F7F5F2}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-bg">
+  <header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1707587935273-be140476254e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw4fHxCcmV3JTIwJTI2JTIwQmVhbiUyMGxvZ28lMjBzbWFsbHxlbnwwfDB8fHwxNzYwNjg2ODQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="logo" class="w-9 h-9 rounded-lg"/><span class="hidden md:inline text-primary font-semibold">Brew & Bean</span></a>
+    </div>
+  </header>
+
+  <main class="py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <section class="lg:col-span-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-semibold">Find a Store</h1>
+            <button id="allow-location" class="px-4 py-2 rounded-full bg-primary text-white">Allow location</button>
+          </div>
+          <div class="mt-4">
+            <img src="https://images.pexels.com/photos/8828439/pexels-photo-8828439.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Map placeholder" class="w-full h-96 rounded-xl object-cover" />
+            <div class="mt-3 text-sm text-gray-500">Interactive map loads on click for performance.</div>
+            <div class="mt-4">
+              <button id="load-map" class="px-6 py-2 rounded-full border">Load interactive map</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="lg:col-span-4">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h2 class="text-lg font-semibold">Nearby cafes</h2>
+          <div class="mt-4 space-y-3">
+            <article class="flex gap-3 bg-gray-50 p-3 rounded-md">
+              <img src="https://images.pexels.com/photos/1867215/pexels-photo-1867215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Downtown cafe" class="w-20 h-20 object-cover rounded-lg" />
+              <div>
+                <h3 class="font-semibold">Brew & Bean — Downtown</h3>
+                <p class="text-sm text-gray-500">Open 7am — 7pm • WiFi • Retail</p>
+                <div class="mt-2 flex gap-2"><a href="#" class="text-sm px-3 py-2 rounded-full bg-primary text-white">Directions</a><a href="tel:+1234567890" class="text-sm px-3 py-2 rounded-full border">Call</a></div>
+              </div>
+            </article>
+
+            <article class="flex gap-3 bg-gray-50 p-3 rounded-md">
+              <img src="https://images.unsplash.com/photo-1631681544465-85149b9c125a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw0fHxzdG9yZSUyMHRodW1ibmFpbCUyMG5laWdoYm9yaG9vZHxlbnwwfDB8fHwxNzYwNjg2ODY1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Maple St cafe" class="w-20 h-20 object-cover rounded-lg" />
+              <div>
+                <h3 class="font-semibold">Brew & Bean — Maple St</h3>
+                <p class="text-sm text-gray-500">Open 6:30am — 6pm • Drive-thru</p>
+                <div class="mt-2 flex gap-2"><a href="#" class="text-sm px-3 py-2 rounded-full bg-primary text-white">Directions</a><a href="tel:+1234567890" class="text-sm px-3 py-2 rounded-full border">Call</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl shadow-lg p-6">
+          <h3 class="font-semibold">Store pages</h3>
+          <p class="text-sm text-gray-600 mt-2">Each location has a dedicated page with gallery, menu highlights, and local events.</p>
+          <div class="mt-4"><a href="#" class="px-6 py-2 rounded-full bg-accent text-white">View all stores</a></div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl shadow-lg p-6">
+          <h3 class="font-semibold">Note</h3>
+          <p class="text-sm text-gray-600 mt-2">We will request geolocation only with your permission; fallback to manual search is available.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-100 py-8"><div class="max-w-6xl mx-auto px-6 text-sm text-gray-600">Wholesale & corporate inquiries</div></footer>
+
+  <script>
+    document.getElementById('load-map').addEventListener('click', ()=>{
+      alert('Interactive map would initialize here in production (lazy-loaded).');
+    });
+  </script>
+</body>
+</html>
